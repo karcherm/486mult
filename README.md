@@ -11,10 +11,10 @@ model. On newer 486 processors, the CPUID instruction is also a possible way to 
 information. Knowing the CPU model, the BIOS *typically* knows the multiplier and can calculate the
 FSB frequency from the processor clock.
 
-Most processors that can run at multiple clock mulitpliers report a different CPU ID. E.g. an Intel
+Most processors that can run at multiple clock multipliers report a different CPU ID. E.g. an Intel
 80486DX4 jumpered for clock doubling instead of clock tripling identifies itself as 80486DX2 instead
-of 80486DX4. There is one notable exception, though: The AMD 80486DX4 NV8T: It always identifies
-itself with a code that typically indicates a 80486DX2. Just looking at the core clock, a BIOS can not
+of 80486DX4. There is one notable exception, though: The first generation of the Intel and the AMD DX4
+processors use the same CPUID value for both x2 and x3 mode. If clocked at 100MHz, the BIOS can not
 distinguish whether the processor operates at 3\*33MHz or 2\*50MHz.
 
 Furthermore, it is hard to get the CPU identifier at runtime from user programs if the processor does
